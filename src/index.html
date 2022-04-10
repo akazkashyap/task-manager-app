@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: red;
+        }
+        table, th, td {
+            border: 1px solid black;
+            /* border-collapse: collapse; */
+            border-radius: 6px;
+            padding: 10px;
+        }
+        div table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>User</h1>
+    <h3>Sign Up</h3>
+    <p><span>Post</span> Endpont : /user/signup</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Type</th>
+                <th>Required</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>name</td>
+            <td>Name of the user</td>
+            <td><span>Yes</span></td>
+        </tr>
+        <tr>
+            <td>email</td>
+            <td>Email of the User.</td>
+            <td><span>Yes</span></td>
+        </tr>
+        <tr>
+            <td>passord</td>
+            <td>Set a password for the User Account.</td>
+            <td><span>Yes</span></td>
+        </tr>
+        <tr>
+            <td>age</td>
+            <td>Age of the user *not required.</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>mob</td>
+            <td>User's mobile number<br>Only indian number for example:+911234567890</td>
+            <td>No</td>
+        </tr>
+
+    </table>
+
+    <h3>Log in</h3>
+    <p> <span>Post</span> Endpont : /user/login</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Type</th>
+                <th>Required</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>email</td>
+            <td>Email of the user's account.</td>
+            <td><span>Yes</span></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>Password of the user's account.</td>
+            <td><span>Yes</span></td>
+        </tr>
+    </table>
+
+    <h3>User methods</h3>
+    <p><span>Login is required for all</span></p>
+    <table>
+        <thead>
+            <tr>
+                <th>Request type</th>
+                <th>Endpont</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tr>
+            <td><span>(Get) </span></td>
+            <td>/user/me</td>
+            <td>To get user accounts details.</td>
+        </tr>
+        <tr>
+            <td><span>(Patch)</span></td>
+            <td> /user/me</td>
+            <td>Make a patch request to update user's data, like name, age, password, mobile number.</td>
+        </tr>
+        <tr>
+            <td><span>(Post) </span></td>
+            <td>/user/logout</td>
+            <td>To log out from current device.</td>
+        </tr>
+        <tr>
+            <td><span>(Post)</span></td>
+            <td>/user/logout/all</td>
+            <td>To log out from all the devices.</td>
+        </tr>
+        <tr>
+            <td><span>(Delete) </span></td>
+            <td>/user/me</td>
+            <td>Make a delete request to delete user.</td>
+        </tr>
+        
+    </table>
+
+    <h1>Tasks</h1>
+    <p><span>Login is required for all request.</span></p>
+    <table>
+        <thead>
+            <tr>
+                <th>Request type</th>
+                <th>Endpont</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tr>
+            <td><span>(Post) </span></td>
+            <td>/task</td>
+            <td>To add new task.<br>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>title</td>
+                            <td>sting</td>
+                            <td><span>Yes</span></td>
+                        </tr>
+                        <tr>
+                            <td>completed</td>
+                            <td>boolean</td>
+                            <td>No, default value = false</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><span>(Patch)</span></td>
+            <td>/task/[task-id]</td>
+            <td>Make a patch request to update task data, like title, completed.</td>
+        </tr>
+        <tr>
+            <td><span>(Get)</span></td>
+            <td>/task/[task-id]</td>
+            <td>To get a single task.</td>
+        </tr>
+        <tr>
+            <td><span>(Get)</span></td>
+            <td>/task</td>
+            <td>To get all the task created by a single user.</td>
+        </tr>
+        <tr>
+            <td><span>(Delete) </span></td>
+            <td>/task/[task-id]</td>
+            <td>To delete a single task.</td>
+        </tr>
+    </table>
+</body>
+</html>
